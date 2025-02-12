@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 router.use(cookieParser());
 
 router.post('/signup', async (req, res) => {
-    const { name, email, password } = req.body;
+    const { email, password } = req.body;
     try {
         let user = await User.findOne({ email });
         if (user) return res.status(400).json({ msg: "User already exists" });
@@ -19,7 +19,6 @@ router.post('/signup', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
         const verificationToken = crypto.randomBytes(32).toString('hex');
         user = new User({
-            name,
             email,
             password: hashedPassword,
             verificationToken,
@@ -51,12 +50,12 @@ router.post('/login' , async(req,res)=>{
     try{
         const {email,password}=req.body;
         const user = await User.findOne({email});
-        if(!user) return res.status(401).json({message:"Something went wronge"});
+        if(!user) return res.status(401).json({message:"Something went wronge,Check email and password"});
         if(!user.isVerified) return res.status(401).json({message:"Check Your Email Address To Verify"});
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
-        res.cookie('token',token)
+        res.cookie('token', token, { httpOnly: true, secure: false });
         res.status(200).json({ token });   
     } catch(error){
         console.log(error)
