@@ -1,7 +1,13 @@
+import Banner from "./components/Banner";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+
 export default function Home(){
   return(
     <main>
-      <h3>Main project Setup</h3>
+      <Navbar/>
+      <Banner/>
+      <Footer/>
     </main>
   )
 }
