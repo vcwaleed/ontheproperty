@@ -4,6 +4,7 @@ import ContactCard from "./components/ContactCard";
 import Footer from "./components/Footer";
 import HomeCard from "./components/HomeCard";
 import Navbar from "./components/Navbar";
+import ProductComponent from "./components/ProductComponent";
 
 export default function Home(){
   return(
@@ -12,6 +13,7 @@ export default function Home(){
       <Banner/>
       <HomeCard/>
       <ChooseUs/>
+      <ProductComponent/>
       <ContactCard/>
       <Footer/>
     </main>

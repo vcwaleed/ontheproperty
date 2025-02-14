@@ -11,9 +11,10 @@ export default function Navbar() {
 
   useEffect(() => {
     const token = Cookies.get("token"); 
+    console.log(token)
     setIsLoggedIn(!!token); 
   }, []);
-
+  
   const handleLogout = () => {
     Cookies.remove("token"); 
     setIsLoggedIn(false);
