@@ -3,18 +3,20 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "../components/Button";
 import TextField from "../components/TextField";
+import Loading from "../components/Loading";
 import Link from "next/link";
 
-export default function Login() {
+export default function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
-
-    const handleLogin = async () => {
+    const handleSignup = async () => {
         setError("");
+        setLoading(true);
         try {
-            const res = await fetch("http://localhost:5000/auth/login", {
+            const res = await fetch("http://localhost:5000/auth/signup", {
                 method: "POST",
                 credentials: 'include',
                 headers: {
@@ -24,17 +26,23 @@ export default function Login() {
             });
             const data = await res.json();
             if (res.ok) {
-                router.push("/");
+                router.push(`/verify?email=${encodeURIComponent(email)}`);
             } else {
-                setError(data.message || "Invalid email or password");
+                setError(data.message || "Something went wrong. Please try again.");
                 setEmail("");
                 setPassword("");
             }
         } catch (err) {
             setError("Something went wrong. Please try again.");
+        } finally {
+            setLoading(false);
         }
     };
-
+    if (loading) {
+        return (
+            <Loading />
+        )
+    }
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="max-w-screen-lg w-full bg-white shadow-lg rounded-lg flex flex-col lg:flex-row p-6 sm:p-10">
@@ -43,30 +51,29 @@ export default function Login() {
                     <div className="w-full flex-1 mt-8">
                         <div className="my-6 border-b text-center">
                             <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
-                                Sign in with Cartesian Email
+                                SignUp with Cartesian Email
                             </div>
                         </div>
                         {error && <p className="text-red-500 text-sm text-center">{error}</p>}
                         <div className="mx-auto max-w-xs">
                             <TextField type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                             <TextField type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                            <Button onClick={handleLogin} className="mt-5 tracking-wide font-semibold text-white w-full py-4 rounded-lg transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                            <Button onClick={handleSignup} className="mt-5 tracking-wide font-semibold text-white w-full py-4 rounded-lg transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                                 <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
                                     <circle cx="8.5" cy="7" r="4" />
                                     <path d="M20 8v6M23 11h-6" />
                                 </svg>
-                                <span className="ml-3">Sign In</span>
+                                <span className="ml-3">Sign Up</span>
                             </Button>
-                          
                         </div>
-                        <Link href='/signup' className="flex justify-center mt-4 underline text-blue-500 hover:text-blue-800">Signup With Gmail </Link>
+                        <Link href='/login' className="flex justify-center mt-4 underline text-blue-500 hover:text-blue-800">Login With Gmail </Link>
                     </div>
                 </div>
                 <div className="lg:w-1/2 hidden lg:flex items-center justify-center bg-navcolor">
-                    <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/images/loginimage.png')" }} />
+                    <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/images/signup.jpg')" }} />
                 </div>
             </div>
         </div>
-    );
+    )
 }

@@ -25,7 +25,7 @@ export default function ProductComponent() {
     }, []);
 
     if (loading) return <div className="text-center p-4">Loading...</div>;
-    if (error) return <div className="text-red-500 text-center p-4">Error: {error}</div>;
+    if (error) return <div className="text-red-500 text-center p-4">Error:Something went Wrong</div>;
 
     return (
         <section className="flex flex-col items-center py-9">

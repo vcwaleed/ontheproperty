@@ -30,7 +30,7 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-6">
           <li><a href="/" className="hover:text-blue-400">Home</a></li>
           <li><a href="/services" className="hover:text-blue-400">Services</a></li>
-          <li><a href="/agents" className="hover:text-blue-400">Agents</a></li>
+          <li><a href="/upload" className="hover:text-blue-400">Upload</a></li>
           <li><a href="/contact" className="hover:text-blue-400">Contact</a></li>
         </ul>
         <div className="hidden md:block">
@@ -57,7 +57,7 @@ export default function Navbar() {
         <ul className="flex flex-col items-center space-y-4 py-4">
           <li><a href="/" className="hover:text-blue-400">Home</a></li>
           <li><a href="/services" className="hover:text-blue-400">Services</a></li>
-          <li><a href="/agents" className="hover:text-blue-400">Agents</a></li>
+          <li><a href="/upload" className="hover:text-blue-400">Upload</a></li>
           <li><a href="/contact" className="hover:text-blue-400">Contact</a></li>
           <div>
             {isLoggedIn ? (
