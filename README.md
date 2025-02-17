@@ -1,3 +1,5 @@
+
+![Screenshot 2025-02-17 052842](https://github.com/user-attachments/assets/6eec2480-7653-4078-a2fc-090cfb105f7a)
 # ontheproperty
 
 ## Description
@@ -43,4 +45,6 @@ JWT_SECRET=your_jwt_secret
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=587
 MAIL_USER=your_mailtrap_username
-MAIL_PASS=your_mailtrap_password
+MAIL_PASS=your_mailtrap_password ```
+
+
