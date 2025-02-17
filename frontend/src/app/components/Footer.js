@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="mx-auto w-full max-w-screen-xl p-4 py-8 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className=" mb-6  md:mb-0  text-sm font-semibold text-gray-600">
-              <a href="https://flowbite.com/" className="flex items-center">
+              <a href="https://github.com/vcwaleed" className="flex items-center">
                 <img src="/images/logo.png" className="h-[90px] me-24" alt="ontheproperty" />
               </a>
              <span>Get Your Dream place</span>
