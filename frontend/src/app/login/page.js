@@ -36,14 +36,14 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="min-h-screen flex items-center justify-center bg-gray-100 font-mono">
             <div className="max-w-screen-lg w-full bg-white shadow-lg rounded-lg flex flex-col lg:flex-row p-6 sm:p-10">
                 <div className="lg:w-1/2 p-6 sm:p-12 flex flex-col items-center">
                     <img src="/images/logo.png" className="mx-auto w-40" alt="Company logo" />
                     <div className="w-full flex-1 mt-8">
                         <div className="my-6 border-b text-center">
-                            <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
-                                Sign in with Cartesian Email
+                            <div className=" leading-none px-2 flex items-center  justify-center  text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
+                               <span className="pr-2"> Login with</span>  <img src="google.svg" width={15} height={20} />  
                             </div>
                         </div>
                         {error && <p className="text-red-500 text-sm text-center">{error}</p>}
@@ -56,11 +56,16 @@ export default function Login() {
                                     <circle cx="8.5" cy="7" r="4" />
                                     <path d="M20 8v6M23 11h-6" />
                                 </svg>
-                                <span className="ml-3">Sign In</span>
+                                <span className="ml-3">Login</span>
                             </Button>
                           
                         </div>
-                        <Link href='/signup' className="flex justify-center mt-4 underline text-blue-500 hover:text-blue-800">Signup With Gmail </Link>
+
+                        <Link href='/signup' className="flex justify-center mt-4 ">
+                        <span className=" text-gray-500 pr-3 hover:text-blue-400"> Register With</span>
+                        <img src="google.svg" width={20} height={20} />  
+                       
+                        </Link>
                     </div>
                 </div>
                 <div className="lg:w-1/2 hidden lg:flex items-center justify-center bg-navcolor">

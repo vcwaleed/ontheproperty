@@ -19,7 +19,7 @@ export default function Verify() {
         );
     }
     return (
-        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 py-12 px-6 lg:px-8">
+        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 py-12 px-6 lg:px-8 font-mono">
             <div className="max-w-md w-full space-y-8">
                 <h2 className="text-2xl font-extrabold text-gray-900 text-center">
                     Check Your Email

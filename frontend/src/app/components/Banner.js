@@ -24,10 +24,10 @@ export default function Banner() {
         <section className="bg-navcolor w-full">
             <div className="max-w-7xl mx-auto px-4 py-14 flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
                 <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-                    <h1 className="text-btn_color text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 max-w-[600px]">
+                    <h1 className="text-btn_color text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 max-w-[600px] font-mono">
                         Find Your Dream House
                     </h1>
-                    <p className="text-btn_color text-lg md:text-xl mb-8 md:mb-12 max-w-[500px]">
+                    <p className="text-btn_color text-lg md:text-xl mb-8 md:mb-12 max-w-[500px] font-mono">
                         Explore our curated selection of exquisite properties meticulously tailored to your unique dream home vision
                     </p>
                     <div className="w-full md:w-auto">
@@ -36,22 +36,22 @@ export default function Banner() {
                                 onClick={handleLogout} 
                                 className="w-full md:w-auto hover:bg-btn_color px-8 md:px-14 py-3 text-lg"
                             >
-                                Logout
+                               <span className="font-mono">Logout</span>
                             </Button>
                         ) : (
                             <Button 
                                 href="/login" 
                                 className="w-full md:w-auto hover:bg-btn_color px-8 md:px-14 py-3 text-lg"
                             >
-                                Login
+                                <span className="font-mono">Login</span>
                             </Button>
                         )}
                     </div>
                 </div>
-                <div className="flex-1 flex justify-center">
+                <div className="flex-1 flex justify-center items-center pl-36">
                     <div className="relative w-full max-w-[500px] aspect-square">
                         <Image
-                            src='/images/banner.png'
+                            src='/images/building.png'
                             alt="Dream House Illustration"
                             fill
                             className="object-contain"

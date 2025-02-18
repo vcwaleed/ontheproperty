@@ -9,7 +9,7 @@ const items = [
 
 export default function ChooseUs() {
     return (
-        <section className="flex flex-col items-center py-9">
+        <section className="flex flex-col items-center py-9 font-mono">
             <h2 className="text-4xl font-bold text-btn_color mb-4">Why Choose Us</h2>
             <p className="text-lg font-medium text-center max-w-2xl">
                 Elevating Your Home Buying Experience with Expertise, Integrity, and Personalized Service.

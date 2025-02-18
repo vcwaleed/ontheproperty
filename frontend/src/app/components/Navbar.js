@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav className="bg-navcolor text-gray-800 shadow-md font-mono font-semibold">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-3 py-3">
         <a href="/" className="flex items-center space-x-3">
-          <img src="/images/logo.png" className="h-16 w-20" alt="Logo" />
+         <span className="font-serif font-bold">ONTHEPROPERTY</span>
         </a>
         <ul className="hidden md:flex space-x-6">
           <li><a href="/" className="hover:text-blue-400">Home</a></li>
@@ -61,12 +61,12 @@ export default function Navbar() {
           <li><a href="/contact" className="hover:text-blue-400">Contact</a></li>
           <div>
             {isLoggedIn ? (
-              <Button onClick={handleLogout} className="hover:bg-red-600">
-                Logout
+              <Button onClick={handleLogout} className="hover:bg-red-600 px-6 py-3 ">
+                 <span className="font-mono">Logout</span>
               </Button>
             ) : (
-              <Button href="/login" className="hover:bg-blue-600">
-                Login
+              <Button href="/login" className="hover:bg-blue-600 px-6 py-3 ">
+                <span className="font-mono">Login</span>
               </Button>
             )}
           </div>

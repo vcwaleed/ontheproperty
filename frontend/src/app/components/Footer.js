@@ -45,7 +45,7 @@ export default function Footer() {
     ];
   
     return (
-      <footer className="bg-card_color dark:bg-gray-900">
+      <footer className="bg-card_color dark:bg-gray-900 font-mono">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-8 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className=" mb-6  md:mb-0  text-sm font-semibold text-gray-600">
